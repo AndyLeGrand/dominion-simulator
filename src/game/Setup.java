@@ -81,21 +81,20 @@ public class Setup {
 
 
     /*
-    * Attention: this function is still buggy!!!
     * This function creates a nested HashMap which holds all cards and their respective properties.
     * The goal is to have a structure which can be flexibly queried for specific properties.
     * Example: allCardsMap.get("Copper").get("Cost") should return the cost of a copper.
     * @return HashMap<String, HashMap<String, String>> nested HashMap which holds all card properties.
     * */
     public HashMap<String, HashMap<String, String>> inputToHashMap() {
-        HashMap<String, HashMap<String, String>> allCardsHashMap = new HashMap<String, HashMap<String, String>>();
-        //HashMap<String, String[]> allCardsHashMap = new HashMap<String, String[]>();
-        HashMap<String, String> tmp = new HashMap<>();
+        HashMap<String, HashMap<String, String>> allCardsHashMap = new HashMap<>();
         String[] headers = this.getHeaderArray();
         ArrayList<String[]> allCards = this.getLineArray();
 
         for (int i = 0; i < allCards.size(); i++) {
             String name  = allCards.get(i)[0];
+
+            HashMap<String, String> tmp = new HashMap<>();
 
             for (int j = 0; j < headers.length; j++) {
                 tmp.put(headers[j], allCards.get(i)[j]);
