@@ -1,4 +1,4 @@
-package base.action;
+package base;
 
 import base.Cards;
 
@@ -28,6 +28,5 @@ public abstract class Action extends Cards {
     public Action(String cardname, int cost, String card_text) {
         this(cardname, "base", cost, card_text,
                 0, 0, 0, 0, 0);
-
     }
 }

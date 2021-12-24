@@ -1,4 +1,4 @@
-package base.coins;
+package base;
 
 import base.Cards;
 
