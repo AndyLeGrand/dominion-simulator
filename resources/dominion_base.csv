@@ -1,18 +1,18 @@
 ﻿Name;Set;Types;Cost;Text;Actions;Cards;Buys;Coins;Trash;Exile;Junk;Gain;Victory Points
-Cellar;Base;Action;2;+1 Action. Discard any number of base, then draw that many.;1;x;;;;;;;
-Moat;Base;Action - Reaction;2;"+2 Cards. When another player plays an Attack card, you may first reveal this from your hand, to be unaffected by it.;;2;;;;;;;
-Vassal;Base ;Action;3;+2 Money. Discard the top card of your deck. If it's an Action card, you may play it.;;;;2;;;;;
-Village;Base ;Action;3;+1 Card. + 2 Actions;2;1;;;;;;;
-Bureaucrat;Base;Action - Attack;4;Gain a Silver onto your deck. Each other player reveals a Victory card from their hand and puts it onto their deck (or reveals a hand with no Victory base).;;;;;;;;1;
-Gardens ;Base;Victory;4;Worth one 1 Victory Point per 10 base you have (round down).;;;;;;;;;
-Remodel;Base;Action;4;Trash a card from your hand. Gain a card costing up to 2 more than it.;;;;;;;;;
-Bandit;Base ;Action - Attack;5;Gain a Gold. Each other player reveals the top 2 base of their deck, trashes a revealed Treasure other than Copper, and discards the rest.;;;;;;;;1;
-Festival;Base;Action;5;+2 Actions. +1 Buy. +2 Coins;2;;1;2;;;;1;
-Artisan;Base;Action;6;Gain a card to your hand costing up to 5. Put a card from your hand onto your deck.;;;;;;;;;
-Copper;Base;Treasure;0;;;;;1;;;;;
-Silver;Base;Treasure;3;;;;;2;;;;;
-Gold;Base;Treasure;6;;;;;3;;;;;
-Estate;Base;Victory;1;;;;;;;;;1;
-Duchy;Base;Victory;5;;;;;;;;;3;
-Province;Base;Victory;9;;;;;;;;;6;
-Curse;Base;Victory;0;;;;;;;;;-1;"
+Cellar;Base;Action;2;+1 Action. Discard any number of base, then draw that many.;1;x;0;0;0;0;0;0;0
+Moat;Base;Action - Reaction;2;+2 Cards. When another player plays an Attack card, you may first reveal this from your hand/, to be unaffected by it.;0;2;0;0;0;0;0;0;0
+Vassal;Base ;Action;3;+2 Money. Discard the top card of your deck. If it's an Action card, you may play it.;0;0;0;2;0;0;0;0;0
+Village;Base ;Action;3;+1 Card. + 2 Actions;2;1;0;0;0;0;0;0;0
+Bureaucrat;Base;Action - Attack;4;Gain a Silver onto your deck. Each other player reveals a Victory card from their hand and puts it onto their deck (or reveals a hand with no Victory base).;0;0;0;0;0;0;0;1;0
+Gardens;Base;Victory;4;Worth one 1 Victory Point per 10 base you have (round down).;0;0;0;0;0;0;0;0;0
+Remodel;Base;Action;4;Trash a card from your hand. Gain a card costing up to 2 more than it.;0;0;0;0;1;0;0;1;0
+Bandit;Base ;Action - Attack;5;Gain a Gold. Each other player reveals the top 2 base of their deck, trashes a revealed Treasure other than Copper, and discards the rest.;0;0;0;0;0;0;0;1;0
+Festival;Base;Action;5;+2 Actions. +1 Buy. +2 Coins;2;0;1;2;0;0;0;1;0
+Artisan;Base;Action;6;Gain a card to your hand costing up to 5. Put a card from your hand onto your deck.;0;0;0;0;0;0;0;1;0
+Copper;Base;Treasure;0;This is a cooper;0;0;0;1;0;0;0;0;0
+Silver;Base;Treasure;3;This is a silver;0;0;0;2;0;0;0;0;0
+Gold;Base;Treasure;6;This is a gold;0;0;0;3;0;0;0;0;0
+Estate;Base;Victory;1;This is an estate;0;0;0;0;0;0;0;1;0
+Duchy;Base;Victory;5;This is a duchy;0;0;0;0;0;0;0;3;0
+Province;Base;Victory;9;This is a province;0;0;0;0;0;0;0;6;0
+Curse;Base;Victory;0;This is a curse;0;0;0;0;0;0;0;-1;0

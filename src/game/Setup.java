@@ -9,7 +9,7 @@ import java.util.Scanner;
 /*
 * <h1>Helper class to read game input from file for later use</h1>
 * In its first implementation, this class expects a csv file, containing
-* one line per card.
+* one line per game card.
 * @author Andreas Kreitschmann
 * */
 public class Setup {
@@ -37,6 +37,7 @@ public class Setup {
             sc = new Scanner(inputFile);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
+            System.out.println("Please provide valid file path");
         } catch (IOException ioex) {
             ioex.printStackTrace();
         }
@@ -62,16 +63,17 @@ public class Setup {
 
     /*
     * This method creates an ArrayList with each element corresponding
-    * one line from the corresponding input file.
+    * to one line from the corresponding input file.
     * @return ArrayList<String[]>
     * */
     public ArrayList<String[]> getLineArray() {
         Scanner sc = this.readFromFile();
         ArrayList<String[]> cardsAvailable = new ArrayList<String[]>();
 
-        // this line skipps the first line
+        // skip the first line
         sc.nextLine();
 
+        // add lines to ArrayList
         while (sc.hasNextLine()) {
             cardsAvailable.add(sc.nextLine().split(";"));
         }
@@ -83,41 +85,42 @@ public class Setup {
     /*
     * This function creates a nested HashMap which holds all cards and their respective properties.
     * The goal is to have a structure which can be flexibly queried for specific properties.
-    * Example: allCardsMap.get("Copper").get("Cost") should return the cost of a copper.
+    * Example: allCardsMap.get("Copper").get("Cost") should return the cost of a copper card.
     * @return HashMap<String, HashMap<String, String>> nested HashMap which holds all card properties.
     * */
     public HashMap<String, HashMap<String, String>> inputToHashMap() {
         HashMap<String, HashMap<String, String>> allCardsHashMap = new HashMap<>();
+
+        // using the two previously defined helper functions to fill hashmap
         String[] headers = this.getHeaderArray();
         ArrayList<String[]> allCards = this.getLineArray();
 
         for (int i = 0; i < allCards.size(); i++) {
             String name  = allCards.get(i)[0];
 
+            // filling the inner hashamp, i.e. populate each card's attributes
             HashMap<String, String> tmp = new HashMap<>();
-
             for (int j = 0; j < headers.length; j++) {
                 tmp.put(headers[j], allCards.get(i)[j]);
-                System.out.println(headers[j] + ", " + allCards.get(i)[j]);
+                //System.out.println(headers[j] + ", " + allCards.get(i)[j]);
             }
 
             allCardsHashMap.put(name, tmp);
-            System.out.println(tmp);
+            //System.out.println(tmp);
         }
         return allCardsHashMap;
     }
 
     /*
-     * This method prints the content of the input file.
+     * This method prints a readable version of the input file
      * */
     public void printInput() {
-        Scanner sc = this.readFromFile();
-        sc.useDelimiter(";");
+        HashMap<String, HashMap<String, String>> allCardsMap = this.inputToHashMap();
 
-        while (sc.hasNextLine()) {
-            System.out.print(sc.next() + ", ");
-        }
-        sc.close();
+        allCardsMap.forEach(
+                (key, value)
+                        -> System.out.println(key + " " + value));
+
     }
 
 
